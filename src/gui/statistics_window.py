@@ -14,7 +14,7 @@ class StatisticsWindow(tk.Toplevel):
 
         self.iconphoto(True, app_icon_photo)
 
-        self.title("Сводная статистика")
+        self.title("PatInfo - Сводная статистика")
         self.geometry("1000x700")
         self.configure(bg="#F5F5F5")
 

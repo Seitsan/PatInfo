@@ -5,7 +5,7 @@ from src.gui.patient_form import PatientForm
 from src.gui.statistics_window import StatisticsWindow
 from PIL import Image, ImageTk
 
-APP_ICON_FILENAME = "icon.ico"
+APP_ICON_FILENAME = "icon.png"
 
 def create_placeholder_image(size=(16, 16), color="#FFFFFF"):
     """Создает небольшое белое изображение-заглушку."""

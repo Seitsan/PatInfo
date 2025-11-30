@@ -22,7 +22,7 @@ class PatientForm(tk.Toplevel):
 
         self.iconphoto(True, app_icon_photo)
 
-        self.title("Редактирование пациента" if patient else "Добавить пациента")
+        self.title("Patinfo - Редактирование пациента" if patient else "PatInfo - Добавить пациента")
         self.geometry("450x550")
         self.configure(bg="#F5F5F5")
 
