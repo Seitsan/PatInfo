@@ -1,0 +1,162 @@
+[
+    {
+        "id": "857510a4-26c5-488f-b2d1-d52e9cccd73f",
+        "last_name": "Белоусов",
+        "first_name": "Захар",
+        "middle_name": "Викторович",
+        "gender": "М",
+        "birth_date": "22-11-1997",
+        "height": 181.0,
+        "weight": 76.0
+    },
+    {
+        "id": "7a369148-9d96-487d-acfd-d7e0f4085827",
+        "last_name": "Кондратьева",
+        "first_name": "Зинаида",
+        "middle_name": "Кузьминична",
+        "gender": "Ж",
+        "birth_date": "07-04-2007",
+        "height": 151.0,
+        "weight": 93.0
+    },
+    {
+        "id": "b94d5668-68f5-46dc-a5f2-9add5c905d70",
+        "last_name": "Калашников",
+        "first_name": "Ладимир",
+        "middle_name": "Анатольевич",
+        "gender": "М",
+        "birth_date": "15-02-2006",
+        "height": 152.0,
+        "weight": 88.0
+    },
+    {
+        "id": "3c059aec-d82f-466b-9801-99e1c66c11ee",
+        "last_name": "Егорова",
+        "first_name": "Ия",
+        "middle_name": "Оскаровна",
+        "gender": "Ж",
+        "birth_date": "17-06-1951",
+        "height": 187.0,
+        "weight": 107.0
+    },
+    {
+        "id": "54f328d4-c886-4c00-b869-e845feab3d10",
+        "last_name": "Федосеев",
+        "first_name": "Будимир",
+        "middle_name": "Иларионович",
+        "gender": "М",
+        "birth_date": "02-07-1982",
+        "height": 195.0,
+        "weight": 52.0
+    },
+    {
+        "id": "c5c1ea20-8e57-4839-8f4c-192523900e88",
+        "last_name": "Панов",
+        "first_name": "Никодим",
+        "middle_name": "Витальевич",
+        "gender": "М",
+        "birth_date": "25-10-1956",
+        "height": 199.0,
+        "weight": 52.0
+    },
+    {
+        "id": "d3fa6039-21a0-4ce5-be60-2b7cb6d35708",
+        "last_name": "Хохлов",
+        "first_name": "Симон",
+        "middle_name": "Давыдович",
+        "gender": "М",
+        "birth_date": "23-01-1959",
+        "height": 153.0,
+        "weight": 115.0
+    },
+    {
+        "id": "0f288a8c-f1c0-4845-99fd-184d4b764419",
+        "last_name": "Казаков",
+        "first_name": "Будимир",
+        "middle_name": "Геннадиевич",
+        "gender": "М",
+        "birth_date": "05-10-1943",
+        "height": 182.0,
+        "weight": 86.0
+    },
+    {
+        "id": "cdaa3ffb-b0ba-447a-b3d3-104c928541a6",
+        "last_name": "Тарасов",
+        "first_name": "Прохор",
+        "middle_name": "Антонович",
+        "gender": "М",
+        "birth_date": "26-07-1964",
+        "height": 183.0,
+        "weight": 87.0
+    },
+    {
+        "id": "dbc48387-bcd7-45f5-b250-bfe4b55af724",
+        "last_name": "Турова",
+        "first_name": "Екатерина",
+        "middle_name": "Ильинична",
+        "gender": "Ж",
+        "birth_date": "16-09-1992",
+        "height": 153.0,
+        "weight": 55.0
+    },
+    {
+        "id": "fd955ecc-14ff-4ba3-a330-fb206ac8a7f0",
+        "last_name": "Пономарев",
+        "first_name": "Спиридон",
+        "middle_name": "Архипович",
+        "gender": "М",
+        "birth_date": "12-05-1979",
+        "height": 191.0,
+        "weight": 91.0
+    },
+    {
+        "id": "b602b7d2-4c1c-4efc-a178-266d24e4f054",
+        "last_name": "Петухова",
+        "first_name": "Эмилия",
+        "middle_name": "Романовна",
+        "gender": "Ж",
+        "birth_date": "24-08-1936",
+        "height": 197.0,
+        "weight": 71.0
+    },
+    {
+        "id": "76e232e5-26dd-42e3-a689-68e65b78680d",
+        "last_name": "Попова",
+        "first_name": "Эмилия",
+        "middle_name": "Григорьевна",
+        "gender": "Ж",
+        "birth_date": "21-11-1991",
+        "height": 185.0,
+        "weight": 120.0
+    },
+    {
+        "id": "540a86a5-7ed7-45b7-9a8b-ee4bb363ae18",
+        "last_name": "Громова",
+        "first_name": "Надежда",
+        "middle_name": "Руслановна",
+        "gender": "Ж",
+        "birth_date": "07-09-1943",
+        "height": 182.0,
+        "weight": 97.0
+    },
+    {
+        "id": "76a44558-094f-4878-9618-f0be29d82bad",
+        "last_name": "Лазарев",
+        "first_name": "Прокл",
+        "middle_name": "Анисимович",
+        "gender": "М",
+        "birth_date": "22-02-1981",
+        "height": 186.0,
+        "weight": 112.0
+    },
+    {
+        "id": "5a352ce9-a13f-439b-9327-88a9c7a97bac",
+        "last_name": "Петров",
+        "first_name": "Петр",
+        "middle_name": "Петрович",
+        "gender": "М",
+        "birth_date": "30-11-1975",
+        "height": 176.0,
+        "weight": 77.0
+    }
+]
