@@ -7,13 +7,32 @@ from PIL import Image, ImageTk
 
 APP_ICON_FILENAME = "icon.png"
 
+
 def create_placeholder_image(size=(16, 16), color="#FFFFFF"):
-    """Создает небольшое белое изображение-заглушку."""
+    """Создает изображение-заглушку заданного размера и цвета.
+
+    Используется когда оригинальная иконка не может быть загружена.
+
+    Args:
+        size: Кортеж (ширина, высота) в пикселях. По умолчанию (16, 16).
+        color: Цвет изображения в формате HEX. По умолчанию "#FFFFFF" (белый).
+
+    Returns:
+        ImageTk.PhotoImage: Объект изображения, готовый для использования в tkinter.
+    """
     img = Image.new('RGB', size, color=color)
     return ImageTk.PhotoImage(img)
 
+
 def load_app_icon(get_path_func):
-    """Загружает иконку приложения или использует заглушку."""
+    """Загружает иконку приложения из файла или создает заглушку при ошибке.
+
+    Args:
+        get_path_func: Функция для получения абсолютного пути к файлу.
+
+    Returns:
+        ImageTk.PhotoImage: Загруженная иконка или изображение-заглушка.
+    """
     try:
         icon_path = get_path_func(f"resources/icons/{APP_ICON_FILENAME}")
         img = Image.open(icon_path)
@@ -22,12 +41,29 @@ def load_app_icon(get_path_func):
         print(f"Ошибка загрузки иконки приложения '{APP_ICON_FILENAME}': {e}. Используется заглушка.")
         return create_placeholder_image(size=(32, 32), color="#44944A")
 
+
 class MainWindow(tk.Tk):
-    """
-    Главное окно приложения.
+    """Главное окно приложения PatInfo.
+
+    Отвечает за отображение списка пациентов и предоставление основных
+    функций управления: добавление, редактирование, удаление и просмотр статистики.
+
+    Attributes:
+        data_manager: Объект для управления данными пациентов.
+        patients: Список объектов Patient.
+        get_path: Функция для получения абсолютных путей к ресурсам.
+        app_icon_photo: Загруженная иконка приложения.
+        tree: Виджет Treeview для отображения таблицы пациентов.
     """
 
     def __init__(self, data_manager, patients, get_path_func):
+        """Инициализирует главное окно приложения.
+
+        Args:
+            data_manager: Объект для сохранения/загрузки данных пациентов.
+            patients: Список объектов Patient для отображения.
+            get_path_func: Функция для получения абсолютных путей к ресурсам.
+        """
         super().__init__()
         self.data_manager = data_manager
         self.patients = patients
@@ -45,6 +81,11 @@ class MainWindow(tk.Tk):
         self.update_table()
 
     def setup_styles(self):
+        """Настраивает визуальные стили для виджетов приложения.
+
+        Определяет цвета, шрифты и внешний вид элементов интерфейса
+        в соответствии с дизайн-системой приложения.
+        """
         style = ttk.Style()
         style.theme_use("clam")
 
@@ -69,6 +110,11 @@ class MainWindow(tk.Tk):
         style.configure("TButton", font=("Montserrat", 12), padding=10)
 
     def create_widgets(self):
+        """Создает и размещает все виджеты в главном окне.
+
+        Разделяет интерфейс на левую панель с кнопками управления
+        и правую панель с таблицей пациентов.
+        """
         # Левая панель с кнопками
         left_frame = tk.Frame(self, bg="#E0E0E0", width=250)
         left_frame.pack(side="left", fill="y")
@@ -124,6 +170,11 @@ class MainWindow(tk.Tk):
         self.tree.bind("<Double-1>", self.on_double_click)
 
     def update_table(self):
+        """Обновляет содержимое таблицы пациентов.
+
+        Полностью очищает текущее содержимое таблицы и заполняет его
+        актуальными данными из списка patients.
+        """
         # Очистка таблицы
         for item in self.tree.get_children():
             self.tree.delete(item)
@@ -136,15 +187,34 @@ class MainWindow(tk.Tk):
             ), tags=(p.id,))
 
     def open_add_patient_form(self):
+        """Открывает форму для добавления нового пациента.
+
+        Создает модальное окно с формой ввода данных о пациенте.
+        """
         PatientForm(self, self.on_patient_save, self.app_icon_photo)
 
     def open_statistics(self):
+        """Открывает окно со статистикой по пациентам.
+
+        Если список пациентов пуст, показывает информационное сообщение.
+        """
         if not self.patients:
             messagebox.showinfo("Инфо", "Нет данных для статистики")
             return
         StatisticsWindow(self, self.patients, self.app_icon_photo)
 
     def on_patient_save(self, data, existing_patient=None):
+        """Обрабатывает сохранение данных пациента.
+
+        Вызывается после подтверждения ввода в форме пациента.
+        Обновляет существующего пациента или создает нового,
+        сохраняет изменения и обновляет таблицу.
+
+        Args:
+            data: Словарь с данными пациента.
+            existing_patient: Существующий объект Patient для обновления.
+                Если None, создается новый пациент.
+        """
         if existing_patient:
             # Обновление существующего
             existing_patient.last_name = data['last_name']
@@ -164,6 +234,11 @@ class MainWindow(tk.Tk):
         self.update_table()
 
     def delete_patient(self):
+        """Удаляет выбранного пациента из списка.
+
+        Запрашивает подтверждение перед удалением. Если пациент выбран,
+        удаляет его из списка patients, сохраняет изменения и обновляет таблицу.
+        """
         selected_item = self.tree.selection()
         if not selected_item:
             messagebox.showwarning("Внимание", "Выберите пациента для удаления")
@@ -180,6 +255,13 @@ class MainWindow(tk.Tk):
             self.update_table()
 
     def on_double_click(self, event):
+        """Обрабатывает двойной клик по строке таблицы.
+
+        Открывает форму редактирования для выбранного пациента.
+
+        Args:
+            event: Событие мыши от tkinter.
+        """
         item = self.tree.selection()
         if not item:
             return

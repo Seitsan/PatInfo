@@ -60,16 +60,6 @@
         "weight": 52.0
     },
     {
-        "id": "d3fa6039-21a0-4ce5-be60-2b7cb6d35708",
-        "last_name": "Хохлов",
-        "first_name": "Симон",
-        "middle_name": "Давыдович",
-        "gender": "М",
-        "birth_date": "23-01-1959",
-        "height": 153.0,
-        "weight": 115.0
-    },
-    {
         "id": "0f288a8c-f1c0-4845-99fd-184d4b764419",
         "last_name": "Казаков",
         "first_name": "Будимир",
@@ -78,16 +68,6 @@
         "birth_date": "05-10-1943",
         "height": 182.0,
         "weight": 86.0
-    },
-    {
-        "id": "cdaa3ffb-b0ba-447a-b3d3-104c928541a6",
-        "last_name": "Тарасов",
-        "first_name": "Прохор",
-        "middle_name": "Антонович",
-        "gender": "М",
-        "birth_date": "26-07-1964",
-        "height": 183.0,
-        "weight": 87.0
     },
     {
         "id": "dbc48387-bcd7-45f5-b250-bfe4b55af724",
